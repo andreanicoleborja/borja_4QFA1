@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FA1: Sign Up Form </title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<form id="signupForm">
+  <fieldset>
+    <legend>Sign Up Sheet🎀</legend>
+    <label for="name">🌷 Name:</label><br>
+    <input type="text" id="name" name="name" required onblur="validateInput(this)" onfocus="clearBorder(this)"><br>
+    
+    <label for="username">🌷 Preferred Username:</label><br>
+    <input type="text" id="username" name="username"  required onblur="validateInput(this)" onfocus="clearBorder(this)"><br>
+    
+    <label for="password">🌷 Password:</label><br>
+    <input type="password" id="password" name="password" required onblur="validateInput(this)" onfocus="clearBorder(this)"><br>
+    
+    <label for="email">🌷 Email:</label><br>
+    <input type="email" id="email" name="email" required onblur="validateInput(this)" onfocus="clearBorder(this)"><br>
+    
+    <label for="address">🌷 Address:</label><br>
+    <textarea id="address" name="address" rows="4" cols="50"  required onblur="validateInput(this)" onfocus="clearBorder(this)"></textarea><br>
+    
+    <label for="gender">🌷 Gender:</label><br>
+    <select id="gender" name="gender"  required onblur="validateInput(this)" onfocus="clearBorder(this)">
+      <option value="" disabled selected>Select Gender ౨ৎ</option>
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+      <option value="prefer_not_to_mention">Prefer not to mention</option>
+    </select><br>
+    
+    <label for="interests">🌷 Interests:</label><br>
+    <textarea id="interests" name="interests" rows="4" cols="50"  required onblur="validateInput(this)" onfocus="clearBorder(this)"></textarea><br>
+    
+    <button type="button" onclick="submitForm()">Submit 🎀</button>
+    <button type="button" onclick="clearForm()">Reset 🎀</button>
+  </fieldset>
+</form>
+
+<div id="output"></div>
+
+<script>
+  function submitForm() {
+    var name = document.getElementById("name").value;
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+    var email = document.getElementById("email").value;
+    var address = document.getElementById("address").value;
+    var gender = document.getElementById("gender").value;
+    var interests = document.getElementById("interests").value;
+
+    var output = document.getElementById("output");
+    output.innerHTML = "<p>🌸 Name: " + name + "</p>" +
+                       "<p>🌸 Preferred Username: " + username + "</p>" +
+                       "<p>🌸 Password: " + password + "</p>" +
+                       "<p>🌸 Email: " + email + "</p>" +
+                       "<p>🌸 Address: " + address + "</p>" +
+                       "<p>🌸 Gender: " + gender + "</p>" +
+                       "<p>🌸 Interests: " + interests + "</p>";
+  }
+
+  function clearForm() {
+  document.querySelectorAll('input, textarea, select').forEach(element => {
+    element.style.borderColor = 'pink';
+  });
+  document.getElementById("signupForm").reset();
+  document.getElementById("output").innerHTML = "";
+}
+
+  function validateInput(inputElement) {
+    if (inputElement.value.trim() === '') {
+      inputElement.style.borderColor = 'red';
+    } else {
+      inputElement.style.borderColor = 'green';
+       
+    }
+  }
+
+  function clearBorder(inputElement) {
+    inputElement.style.borderColor = '';
+  }
+</script>
+</body>
+</html>

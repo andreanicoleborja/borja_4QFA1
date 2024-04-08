@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Alice&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Shrikhand&family=Yeseva+One&display=swap');
+body{
+    margin: 5%;
+    background: url(fa1wp.jpg);
+}
+
+fieldset {
+  border: 2px solid #dd4b9b;
+  border-radius: 5px;
+  
+}
+label{
+  font-family: 'Josefin Sans' ;
+  font-size: 1.1em;
+  
+}
+legend {
+  font-weight: bold;
+  font-size: 2.5em;
+  color:#86203f;
+  padding: 5px;
+}
+
+input[type="text"], input[type="password"], input[type="email"], select, textarea {
+  margin-bottom: 10px;
+  padding: 5px;
+  border: 1px solid #d34493;
+  border-radius: 5px;
+  width: 98%;
+}
+
+button[type="button"] {
+  padding: 10px;
+  background-color: #ee6db8;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+}
+
+button[type="button"]:hover {
+  background-color: #ca298c;
+}
+
+#output {
+  margin-top: 5%;
+  margin-left: 20%;
+  margin-right: 20%;
+  background-color: #ee6db8c9;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 1em;
+  font-family: 'Josefin Sans' ;
+}
+#reset{
+   border: 1px solid #d34493;
+}
